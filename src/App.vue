@@ -113,8 +113,8 @@
             <el-form-item label="Last name" prop="name">
               <el-input v-model="ruleForm.LastName"></el-input>
             </el-form-item>
-            <el-form-item class="combine">
-              <el-form-item  label="DOB" prop="region">
+            <el-form-item  prop="region">
+              <!-- <el-form-item label="DOB" prop="region">
                 <el-date-picker
                   type="date"
                   placeholder="选择日期"
@@ -122,7 +122,6 @@
                 ></el-date-picker>
               </el-form-item>
               <el-form-item label="Title" prop="region">
-                <!-- <slot name="label"><span>Title</span></slot> -->
                 <el-select
                   v-model="ruleForm.region"
                   placeholder="请选择活动区域"
@@ -130,9 +129,9 @@
                   <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option>
                 </el-select>
-              </el-form-item>
+              </el-form-item> -->
             </el-form-item>
-            <el-form-item label="Email">
+            <el-form-item class="Email" label="Email">
               <el-form-item prop="Email">
                 <el-input v-model="ruleForm.name"></el-input>
               </el-form-item>
@@ -140,7 +139,7 @@
                 <el-input v-model="ruleForm.name"></el-input>
               </el-form-item>
             </el-form-item>
-            <el-form-item label="Mobile">
+            <el-form-item class="Mobile" label="Mobile">
               <el-form-item prop="type">
                 <el-input v-model="ruleForm.name"></el-input>
               </el-form-item>
@@ -492,7 +491,7 @@ h4 {
   margin: 0;
   padding: 0;
   font-style: normal;
-  font: 12px/22px "\5B8B\4F53", Arial, Helvetica, sans-serif;
+  // font: 12px/22px "\5B8B\4F53", Arial, Helvetica, sans-serif;
 }
 ol,
 ul,
@@ -592,6 +591,7 @@ a:hover {
       position: absolute;
       $default-top: 12px;
       $default-left: 500px;
+
       .Formdata {
         height: 300px;
         top: 12px;
@@ -692,23 +692,24 @@ a:hover {
     line-height: 30px;
     font-size: 12px;
   }
-  .combine{
-      .el-form-item {
+  .combine {
+    .el-form-item {
       // flex:1
       // display: inline;
     }
-  } 
+  }
   .el-form-item__content {
-    // width: 300px;
+    // margin-bottom: 5px;
+    width: 250px;
     line-height: 30px;
     font-size: 12px;
   }
   .el-date-editor.el-input,
   .el-date-editor.el-input__inner {
-    width: 300px;
+    width: 250px;
   }
   .el-input__inner {
-    width: 300px;
+    width: 250px;
     height: 30px;
     line-height: 30px;
   }
@@ -720,6 +721,16 @@ a:hover {
   .el-form-item {
     margin-bottom: 5px;
   }
+  .el-form-item.Email,
+  .el-form-item.Mobile {
+    margin-bottom: 0;
+  }
+  // .el-form-item.Email,
+  // .el-form-item.mobile {
+  //   .el-form-item{
+  //     margin-bottom: 0;
+  //   }
+  // }
   .el-input__icon {
     line-height: 30px;
   }
